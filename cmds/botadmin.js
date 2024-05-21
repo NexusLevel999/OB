@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 15,
     async execute(api, event, args, commands) {
         if (args.length < 1) {
-            return api.sendMessage("Usage: !botadmin <add/delete/list> [<uid>]", event.threadID);
+            return api.sendMessage("Usage: ${prefix}botadmin <add/delete/list> [<uid>]", event.threadID);
         }
 
         const action = args[0].toLowerCase();
@@ -32,7 +32,7 @@ module.exports = {
                     }
                 }
 
-                return api.sendMessage("Admins: " + adminNames.join("\n❤️"), event.threadID);
+                return api.sendMessage("Admins: " + adminNames.join(""), event.threadID);
             }
 
             const uid = args[1];

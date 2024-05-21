@@ -3,7 +3,7 @@
 Im a Legit PullStack Developer becoz i pull everything from net - hzhz
 */
 
-const PREFIX = "!"; 
+const PREFIX = ""; 
 //paitan
 const port = process.env.PORT || 21850;
 //para sa bot-hosting

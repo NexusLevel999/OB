@@ -10,13 +10,13 @@ module.exports = {
             return;
         }
         
-        const myOten = event.senderID;
+        const sid = event.senderID;
         const question = args.join(" ");
         const searchMessage = `Looking for an answer for "${question}"...`;
         api.sendMessage(searchMessage, event.threadID, event.messageID);
  
  
-       const apiUrl = `http://94.130.129.40:8370/gpt4?prompt=${encodeURIComponent(question)}&uid=${myOten}`;
+       const apiUrl = `http://94.130.129.40:8370/gpt4?prompt=${encodeURIComponent(question)}&uid=${sid}`;
        
 
         axios.get(apiUrl)

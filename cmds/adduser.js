@@ -1,5 +1,6 @@
 module.exports = {
     description: "Add a user to the thread or group chat",
+    version: "1.0.0",
     role: "botadmin",
     credits: "unknown",
     aliases: ["au", "add"],

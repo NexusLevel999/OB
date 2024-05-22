@@ -5,6 +5,8 @@ const adminFilePath = './database/botadmin.json';
 module.exports = {
     description: "manage bot admin add or delete",
     role: "admin",
+    aliases: ["admin"],
+    usage: "[admin]",
     credits: "Rejardgwapo",
     cooldown: 15,
     async execute(api, event, args, commands) {

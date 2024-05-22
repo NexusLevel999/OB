@@ -1,5 +1,8 @@
 module.exports = {
     description: "Talk to sim",
+    version:"1.0.0",
+    aliases:["sim"],
+    usage: "",
     role: "user",
     credits: "jerome",
     cooldown: 0,

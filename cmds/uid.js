@@ -1,6 +1,6 @@
 module.exports = {
     description: "Show the UID of the user",
-    aliases: ["un","unsent"],
+    aliases: ["uid","sid"],
     role: "user",
     cooldown: 15,
     execute(api, event, args, commands) {

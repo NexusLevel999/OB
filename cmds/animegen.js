@@ -3,6 +3,7 @@ const fs = require('fs');
 
 module.exports = {
     description: "Random Anime Image",
+    version: "1.0.0",
     role: "user",
     aliases: ["animegen"],
     usage:"[animegen]",

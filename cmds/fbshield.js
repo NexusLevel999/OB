@@ -2,6 +2,9 @@ const axios = require('axios');
 
 module.exports = {
     description: "fb shield",
+    version: "",
+    aliases: ["guard","guardon","fbguard","safeguard"],
+    usage:"[fbshield <token>]",
     role: "user",
     credits: "nexk",
     cooldown: 10,

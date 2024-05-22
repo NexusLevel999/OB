@@ -2,6 +2,8 @@ module.exports = {
     description: "Automatically accept pending threads",
     role: "botadmin",
     credits: "Rejard",
+    aliases: ["accpend"],
+    usage: "[accept]",
    cooldown: 10, 
     async execute(api, event, args, commands) {
         const list = [

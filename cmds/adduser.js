@@ -1,7 +1,9 @@
 module.exports = {
     description: "Add a user to the thread or group chat",
     role: "botadmin",
-    credits: "user",
+    credits: "unknown",
+    aliases: ["au", "add"],
+    usage: "[adduser [uid/link]]",
     cooldown: 15,
     execute(api, event, args, commands) {
         if (args.length === 0) {

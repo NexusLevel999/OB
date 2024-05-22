@@ -1,6 +1,9 @@
 const axios = require('axios');
 module.exports = {
     description: "Ask the GPT a question",
+    version: "",
+    aliases:[],
+    usage: "",
     role: "user",
     cooldown: 8,
     execute(api, event, args, commands) {

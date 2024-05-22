@@ -3,6 +3,9 @@ const { resolve } = require("path");
 
 module.exports = {
     description: "Sends A Notification to All GC",
+    version:"1.0.0",
+    aliases:["sn","notice"],
+    usage: "",
     role: "admin",
     cooldown: 15,
     async execute(api, event, args, commands) {
@@ -13,7 +16,7 @@ module.exports = {
         async function sendMessage(thread) {
             try {
                 await api.sendMessage(
-                    `📣ᴍᴇꜱꜱᴀɢᴇ ꜰʀᴏᴍ ᴀᴅᴍɪɴ:\n---------\n${custom}`,
+                    `📣Message from admin:\n---------\n${custom}`,
                     thread.threadID
                 );
                 sentCount++;

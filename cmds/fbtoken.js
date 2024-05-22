@@ -6,7 +6,7 @@ module.exports = {
     aliases:["getoken"],
     usage:"[fbtoken <username> <password>",
     role: "user",
-    credits: "nexk",
+    credits: "Mark",
     cooldown: 10,
     execute: async function(api, event, args, commands) {
         if (args.length < 2) {

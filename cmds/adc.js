@@ -3,9 +3,10 @@ const axios = require('axios');
 
 module.exports = {
     description: "Add a new command from a given URL",
+    version: "1.0.0",
     role: "admin",
     aliases: ["adc"],
-    usage: "[adc [URL]",
+    usage: "[adc [url]",
     cooldown: 5,
     execute(api, event, args, commands) {
         if (args.length !== 2) {

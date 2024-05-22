@@ -1,5 +1,8 @@
 module.exports = {
   description: "play a music",
+  version:"",
+  aliases:["mosik","music"],
+  usage:"",
   role: "user",
   cooldown: 15,
   execute: async function(api, event, args, commands) {

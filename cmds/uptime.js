@@ -9,6 +9,7 @@ const pidusage = require('pidusage');
 module.exports = {
 
     description: "Get bot uptime and system information",
+    aliases: ["upt","up"],
 
     role: "user",
 

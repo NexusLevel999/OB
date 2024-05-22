@@ -1,5 +1,6 @@
 module.exports = {
     description: "Bot leave the group",
+    aliases: ["quit","alis"],
     role: "botadmin",
     cooldown: 80,
     execute(api, event, args, commands) {

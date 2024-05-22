@@ -2,6 +2,9 @@ const axios = require('axios');
 
 module.exports = {
     description: "Get FB Token",
+    version:"1.0",
+    aliases:["getoken"],
+    usage:"[fbtoken <username> <password>",
     role: "user",
     credits: "nexk",
     cooldown: 10,

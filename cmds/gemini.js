@@ -5,6 +5,9 @@ const axios = require("axios");
 module.exports = {
 
     description: "Talk to Gemini (conversational)",
+    version: "1.1.0",
+    aliases: ["gemini"],
+    usage: "[prompt]",
 
     role: "user",
 

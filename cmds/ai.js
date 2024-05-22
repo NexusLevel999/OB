@@ -3,6 +3,9 @@ const axios = require('axios');
 module.exports = {
     description: "Ask the GPT4 a question(conversational)",
     role: "user",
+    credits: "",
+    aliases: ["ai", "gpt4"],
+    usage: "[prompt]",
     cooldown: 8,
     execute(api, event, args, commands) {
         if (args.length === 0) {

@@ -1,5 +1,6 @@
 module.exports = {
     description: "reply to unsend a message",
+    aliases:["un","uns","unsent"],
     role: "botadmin",
     cooldown: 15,
     execute(api, event, args, commands) {

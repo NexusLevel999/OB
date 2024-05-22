@@ -2,6 +2,9 @@ const axios = require('axios');
 
 module.exports = {
     description: "Fbdown",
+    version: "1.0.3",
+    aliases: ["fbdl","fbdown"],
+    usage: "[fbdl <url>",
     role: "user",
     credits: "nexk",
     cooldown: 10,

@@ -1,5 +1,6 @@
 module.exports = {
     description: "Restart the server",
+    aliases: ["reset","rest"],
     role: "admin",
     cooldown: 50,
     execute(api, event, args, commands) {

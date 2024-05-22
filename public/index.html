@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OctoBot</title>
+<title>𝙉𝙚𝙠𝙨𝙪𝙨</title>
 <style>
 .modale {
 display:none;
@@ -130,31 +130,33 @@ font-size:15px
 }
 </style>
 </head>
-<body><h1>OctoBot</h1>
-<details open><summary>About:</summary>
-<p>OctoBot is a bot modules created by Rejard and modified by <a href="https://www.facebook.com/NexusLevel999">NexusKai</a> aim is to practice my coding skills.</p>
+<body>
+<h1>OctoBot</h1>
+<details open><summary>About</summary>
+<p>Octobot is a simple facebook messenger bot created by hardasf(Rejard Bentazar).</p>
 </details>
 <br>
 <fieldset>
 <legend>
-<b>🍪Update Cookie</b></legend><form id="uploadForm" enctype="multipart/form-data">
+<b>Update Cookies</b>
+</legend>
+<form id="uploadForm" enctype="multipart/form-data">
 <label for="cookieFile">Select a cookie file (JSON):</label>
 <input type="file" id="cookieFile" name="cookieFile" accept=".json" required>
 <button type="button" onclick="uploadCookies()">Update Cookie</button>
 </form>
 <details>
 <summary>GUIDE</summary>
-<p>This Feature will automatically update your Appstate</p>
+<p>This Feature will automatically update your Cookie</p>
 </details>
 </fieldset>
 <center>
-<p>©Nexus | Credits: Rejard Bentazar OctoBot Owner</p>
+<p>Credits:<a href="https://www.facebook.com/rejardbentazarofficial">@Rejard</a> <br>Source: <a href="https://www.github.com/hardasf/OctoBotRemake">OctoBotRemake</a></p>
 </center>
 <div id="passwordModal" class="modal">
-<p>Enter the password:</p>
+<p>Enter Password:</p>
 <input type="password" id="passwordInput">
-<button onclick="checkPassword()">Submit</button>
-</div>
+<button onclick="checkPassword()">Submit</button></div>
 <script>
 async function uploadCookies() {
 const form= document.getElementById('uploadForm');
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded',function() {
 document.getElementById('passwordModal').style.display='block'});
 function checkPassword() {
 const password = document.getElementById('passwordInput').value;
-if (password!=='12345') {
+if (password!=='') {
 alert('Incorrect password. Access denied.');
 document.body.innerHTML=''
 } 
@@ -175,4 +177,4 @@ else {
 document.getElementById('passwordModal').style.display='none'}}
 </script>
 </body>
-  </html>
+</html>

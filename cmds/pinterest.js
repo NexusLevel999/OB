@@ -28,6 +28,10 @@ async function getPinterest(img) {
 }
 module.exports = {
   description: "search pictures in pinterest",
+  version: "1.0.0",
+  aliases: ["pinte","pin"],
+usage: "",
+
   role: "user",
   cooldown: 15,
 execute: async function(api, event, args, commands) {

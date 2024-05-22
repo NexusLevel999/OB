@@ -4,6 +4,8 @@ const fs = require('fs');
 module.exports = {
     description: "Random Anime Image",
     role: "user",
+    aliases: ["animegen"],
+    usage:"[animegen]",
     cooldown: 18,
     credits: "Neku",
     execute(api, event, args, commands) {

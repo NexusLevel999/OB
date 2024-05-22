@@ -4,6 +4,7 @@ const adminFilePath = './database/botadmin.json';
 
 module.exports = {
     description: "manage bot admin add or delete",
+    version: "1.0.1",
     role: "admin",
     aliases: ["admin"],
     usage: "[admin]",

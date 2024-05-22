@@ -2,6 +2,7 @@ const axios = require('axios');
 
 module.exports = {
     description: "Ask the GPT4 a question(conversational)",
+    version: "1.0.0",
     role: "user",
     credits: "",
     aliases: ["ai", "gpt4"],

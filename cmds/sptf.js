@@ -2,6 +2,9 @@ const axios = require('axios');
 
 module.exports = {
     description: "Search for tracks on Spotify",
+    version:"1.0.0",
+    aliases:["sptfy","spotify"],
+usage: "",
     role: "user",
     credits: "nexk",
     cooldown: 10,

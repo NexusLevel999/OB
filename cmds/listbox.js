@@ -1,6 +1,7 @@
 module.exports = {
 
     description: "List groups and perform actions",
+    aliases: ["lb","listb"],
 
     role: "admin",
 

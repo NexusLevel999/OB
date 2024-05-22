@@ -1,7 +1,7 @@
 module.exports = {
     description: "Show available commands or details of a specific command",
     role: "user",
-    credits: "rejard | nexk",
+    credits: "rejard",
     cooldown: 10,
     execute(api, event, args, commands) {
         const commandNames = Array.from(commands.keys());
@@ -30,6 +30,8 @@ module.exports = {
             } else {
                 let message = `Name: ${commandName}\n`;
                 message += `Description: ${command.description}\n`;
+                message += `Version: ${command.version}\n`;
+                message += `Aliases: ${command.aliases}\n`;
                 message += `Role: ${command.role}\n`;
                 message += `Credits: ${command.credits}\n`;
                 message += `Usage: /${commandName}\n`;

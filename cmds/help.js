@@ -2,18 +2,37 @@ module.exports = {
     description: "Show Commands and the descriptions",
     role: "user",
     credits: "rejardgwapo",
-    cooldown: 16,		
+    cooldown: 16,
     execute(api, event, args, commands) {
-        let helpMessage = '𝙷𝚒! 𝚃𝚑𝚒𝚜 𝙱𝚘𝚝 𝚒𝚜 𝚌𝚛𝚎𝚊𝚝𝚎𝚍 𝚊𝚝 𝚢𝚎𝚝𝚊𝚗𝚘𝚝𝚑𝚎𝚛𝚏𝚋𝚋𝚘𝚝.𝚣𝚢𝚊.𝚖𝚎. 𝙷𝚎𝚛𝚎 𝚊𝚛𝚎 𝚊𝚕𝚕 𝚝𝚑𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚒𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍 𝚘𝚗 𝚝𝚑𝚒𝚜 𝚜𝚎𝚛𝚟𝚎𝚛\n';
-        helpMessage += '💮═══════════════💮\n';
-        commands.forEach((command, name) => {
-            helpMessage += `𝙽𝚊𝚖𝚎: ${name}\n`;
-            helpMessage += `𝙳𝚎𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗: ${command.description}\n`;
-            helpMessage += `𝚁𝚘𝚕𝚎: ${command.role}\n`;
-            helpMessage += `Credits: ${command.credits}\n`;
-        helpMessage += '💮═══════════════💮\n';
-        });
-        helpMessage += '💬https://facebook.com/yetanotherfbbot';
-        api.sendMessage(helpMessage, event.threadID);
+        let senderName = event.senderName; // Assuming event has senderName property
+
+        if (args.length > 0) {
+            // If a specific command is requested
+            const commandName = args[0];
+            const command = commands.get(commandName);
+
+            if (command) {
+                let specificHelpMessage = `Command: ${commandName}\n`;
+                specificHelpMessage += `Description: ${command.description}\n`;
+                specificHelpMessage += `Role: ${command.role}\n`;
+                specificHelpMessage += `Credits: ${command.credits}\n`;
+                specificHelpMessage += `Cooldown: ${command.cooldown} seconds\n`;
+
+                api.sendMessage(specificHelpMessage, event.threadID);
+            } else {
+                api.sendMessage(`Command "${commandName}" not found.`, event.threadID);
+            }
+        } else {
+            // General help message
+            let helpMessage = `Hello, ${senderName}, here's my available commands\n\n`;
+
+            commands.forEach((command, name) => {
+                helpMessage += `${name}\n`;
+            });
+
+            helpMessage += '\nType "help [command name]" for full information on a specific command.';
+
+            api.sendMessage(helpMessage, event.threadID);
+        }
     }
 };

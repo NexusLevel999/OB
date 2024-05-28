@@ -3,83 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐙 OctobotRemake</title>
-  <link rel= "stylesheet" href="rejardgwapo.css"></link>
+  <title>AutobotFB</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="rejardgwapo.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #cc0000;
+      font-family: "Courier New", Courier, monospace;
+    }
+    .navbar {
+      background-color: #111;
+    }
+    .navbar-brand, .nav-link, .dropdown-item, .dropdown-menu, a {
+      color: #cc0000 !important;
+      background-color: #111;
+    }
+    .container {
+      margin-top: 20px;
+    }
+    button {
+    	background-color:#111;
+    color:#cc0000;
+    }
+    .form-control, .btn {
+      background-color: #111;
+      color: #cc0000;
+      border: 1px solid #cc0000;
+    }
+    .form-control::placeholder {
+      color: #cc0000;
+    }
+    .centered-textarea {
+      height: 150px;
+    }
+    .footer {
+      color: #cc0000;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #agreeCheckbox {
+      accent-color: #cc0000;
+    }
+    #submitButton {
+      background-color: #cc0000;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
-  <h1>🐙OctoBotRMKE</h1>
-  <details open>
-    <summary>About:</summary>
-    <p>OctobotRemake is a bot module created and maintained by <a href="https://www.facebook.com/rejardbentazarofficial">Rejard Bentazar</a>...</p>
-  </details>
-  <br>
-    <div class="fieldset-container">
-  <fieldset>
-  <legend><b>🌟Status</b></legend>
-    <div id="login-status"></div>
-    <details>
-      <summary>GUIDE</summary>
-      <p>after u upload or logouted it takes upto 5 seconds or more to complete</p>
-    </details>
-    </fieldset>
-    </div>
-  <br>
-     <div class="fieldset-container">
+  <div class="container" id="statusSection">
     <fieldset>
-    <legend><b>🍪Update Cookie<t style="font-size:6px">via paste</t></b></legend>
-    <label for jsonTextarea> Paste Your Appstate Here:</label>
-   <textarea id="jsonTextarea" rows="5" cols="30"></textarea>
-<button onclick="uploadJsonCookies()">Update Cookie</button>
-</fieldset>
-     </div>
-  <br>
-    <div class="fieldset-container">
-  <fieldset>
-    <legend><b>🍪Update Cookie</b></legend>
-    <form id="uploadForm" enctype="multipart/form-data">
-      <label for="cookieFile">Select a cookie file (JSON):</label>
-      <input type="file" id="cookieFile" name="cookieFile" required>
-      <button type="button" onclick="uploadCookies()">Update Cookie</button>
-    </form>
-    <details>
-      <summary>GUIDE</summary>
-      <p>This Feature will automatically update your OctoBOT_Appstate</p>
-      <p> you have to upload config.json with your appstate inside gets pag dipa talon ka sa building</p>
-    </details>
-    <br>
+      <legend><b>🌟Status</b></legend>
+      <div id="login-status"></div>
+      <details>
+        <summary>GUIDE</summary>
+        <p>After you upload or logout, it may take up to 5 seconds or more to complete.</p>
+      </details>
     </fieldset>
-    </div>
-    <br>
-    <div class="fieldset-container">
-  <fieldset>
-    <legend><b style="color:red">🍪 Logout Cookie</b></legend>
-    <button onclick="logoutCookie()" style="color:red">Logout Cookie</button>
-  </fieldset>
-    </div>
+  </div>
   <br>
-    <div class="fieldset-container">
+  <div class="container" id="cookieSection">
     <fieldset>
-    <legend><b>🍪Update Cookie<t style="font-size:6px">via Login</t></b></legend>
-    <label> Input your Credentials </label>
-    <input type="text" id="usernameInput" placeholder="Username">
-<input type="password" id="bilatInput" placeholder="Password">
-<button onclick="myOten()">Login</button>
+      <legend><b>🍪Update Cookie (via paste)</b></legend>
+      <label for="jsonTextarea">Paste Your Appstate Here:</label>
+      <textarea id="jsonTextarea" rows="5" cols="30" class="form-control" style="background-color: #111; color:#cc0000; border-color:#cc0000;"></textarea>
+      <button class="btn btn-primary" onclick="uploadJsonCookies()">Update Cookie</button>
     </fieldset>
-    </div>
     <br>
-  <center>
-    <p>©Rejard2024</p>
-  </center>
+    <fieldset>
+      <legend><b>🍪Update Cookie</b></legend>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <label for="cookieFile">Select a cookie file (JSON):</label>
+        <input type="file" id="cookieFile" name="cookieFile" required class="form-control">
+        <button type="button" class="btn btn-primary" onclick="uploadCookies()">Update Cookie</button>
+      </form>
+      <details>
+        <summary>GUIDE</summary>
+        <p>This feature will automatically update your OctoBOT_Appstate. You have to upload config.json with your appstate inside.</p>
+      </details>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend><b style="color:red">🍪 Logout Cookie</b></legend>
+      <button class="btn btn-danger" onclick="logoutCookie()" style="color:red">Logout Cookie</button>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend><b>🍪Update Cookie (via Login)</b></legend>
+      <label>Input your Credentials</label>
+      <input type="text" id="usernameInput" placeholder="Username" class="form-control" style="background-color: #111; color:#cc0000; border-color:#cc0000;">
+      <input type="password" id="bilatInput" placeholder="Password" class="form-control" style="background-color: #111; color:#cc0000; border-color:#cc0000;">
+      <button class="btn btn-primary" onclick="myOten()">Login</button>
+    </fieldset>
+  </div>
+  <br>
+  <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
+    <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions.
+  </label>
+  <div class="col text-center">
+    <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%; border-color:#cc0000;">Submit</button>
+  </div>
+  <div id="result" class="container text-center" style="display: none;"></div>
+  <div class="footer">
+    <p style="font-size: 20px;">Disclaimer:</p>
+    <p>I do not own any of the commands, including its APIs used, credits to the rightful owners.</p>
+  </div>
   <div id="passwordModal" class="modal">
     <div class="modal-content">
       <p>Enter the password:</p>
-      <input type="password" id="passwordInput">
-      <button onclick="checkPassword()">Submit</button>
-    <center><p>PING: <b id="ping"></b></p></center>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+      <input type="password" id="passwordInput" class="form-control">
+      <button class="btn btn-primary" onclick="checkPassword()">Submit</button>
   <script>
     async function uploadCookies() {
       const form = document.getElementById('uploadForm');
@@ -104,7 +141,6 @@
       const formData = new FormData();
       const emptyCookie = new Blob(['[]'], { type: 'application/json' });
       formData.append('cookieFile', emptyCookie, 'cookie.json');
-
       try {
         const response = await fetch('/api/upload', {
           method: 'POST',
@@ -112,7 +148,7 @@
         });
         const result = await response.json();
         if (result.success) {
-          Swal.fire('Success', 'LOGOUT SUCCESSFULLY', 'success');
+          Swal.fire('Success', result.message, 'success');
         } else {
           Swal.fire('Error', result.message, 'error');
         }
@@ -120,115 +156,84 @@
         Swal.fire('Error', 'An error occurred while logging out.', 'error');
       }
     }
-async function uploadJsonCookies() {
-  const jsonText = document.getElementById('jsonTextarea').value;
-  const blob = new Blob([jsonText], { type: 'application/json' });
-  const formData = new FormData();
-  formData.append('cookieFile', blob, 'cookie.json');
 
-  try {
-    const response = await fetch('/api/upload', {
-      method: 'POST',
-      body: formData
-    });
-    const result = await response.json();
-    if (result.success) {
-      Swal.fire('Success', result.message, 'success');
-    } else {
-      Swal.fire('Error', result.message, 'error');
-    }
-  } catch (error) {
-    Swal.fire('Error', 'An error occurred while uploading cookies.', 'error');
-  }
-    }
-    //meow
-    async function myOten() {
-  const usernameInput = document.getElementById('usernameInput');
-  const passwordInput = document.getElementById('bilatInput');
-
-  const username = usernameInput.value;
-  const password = bilatInput.value;
-
-  try {
-    const response = await fetch(`https://appstategetternineth.vercel.app/appstate_prov2?user=${username}&pass=${password}`);
-    const data = await response.json();
-    const sessionCookies = data.appstate;
-
-    const jsonText = JSON.stringify(sessionCookies, null, 2);
-    const blob = new Blob([jsonText], { type: 'application/json' });
-    const formData = new FormData();
-    formData.append('cookieFile', blob, 'cookie.json');
-
-    const uploadResponse = await fetch('/api/upload', {
-      method: 'POST',
-      body: formData
-    });
-    const uploadResult = await uploadResponse.json();
-    if (uploadResult.success) {
-      Swal.fire('Success', 'Cookies uploaded successfully!', 'success');
-    } else {
-      Swal.fire('Error', 'Failed to upload cookies.', 'error');
-    }
-  } catch (error) {
-    Swal.fire('Error', 'Failed to login or upload cookies.', 'error');
-  }
-        }
-    //ebd
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('passwordModal').style.display = 'block';
-    });
-
-    async function checkPassword() {
-      const password = document.getElementById('passwordInput').value;
-
-      const response = await fetch('/verify-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ password })
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        document.getElementById('passwordModal').style.display = 'none';
-      } else {
-        Swal.fire('Error', 'Incorrect password. Access denied.', 'error').then(() => {
-          document.body.innerHTML = '';
+    async function uploadJsonCookies() {
+      const jsonTextarea = document.getElementById('jsonTextarea');
+      const jsonData = jsonTextarea.value.trim();
+      if (!jsonData) {
+        Swal.fire('Error', 'Please enter JSON data.', 'error');
+        return;
+      }
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      const formData = new FormData();
+      formData.append('cookieFile', blob, 'cookie.json');
+      try {
+        const response = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
         });
+        const result = await response.json();
+        if (result.success) {
+          Swal.fire('Success', result.message, 'success');
+        } else {
+          Swal.fire('Error', result.message, 'error');
+        }
+      } catch (error) {
+        Swal.fire('Error', 'An error occurred while uploading JSON cookies.', 'error');
       }
     }
-    
-      function fetchLoginStatus() {
-  fetch('/api/login-status')
-    .then(response => response.json())
-    .then(data => {
-      const loginStatusDiv = document.getElementById('login-status');
-      loginStatusDiv.textContent = `UID: ${data.uid}, Status: ${data.status}`;
-    })
-    .catch(error => {
-      console.error('Error fetching login status:', error);
-    });
-}
 
-fetchLoginStatus();
-setInterval(fetchLoginStatus, 3000);
-    //hdd
-    function measurePing() {
-  var xhr = new XMLHttpRequest();
-  var startTime, endTime;
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      endTime = Date.now();
-      var pingTime = endTime - startTime;
-      document.getElementById("ping").textContent = pingTime + " ms";
+    async function myOten() {
+      const username = document.getElementById('usernameInput').value;
+      const password = document.getElementById('bilatInput').value;
+      const credentials = { username, password };
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(credentials)
+        });
+        const result = await response.json();
+        if (result.success) {
+          Swal.fire('Success', result.message, 'success');
+        } else {
+          Swal.fire('Error', result.message, 'error');
+        }
+      } catch (error) {
+        Swal.fire('Error', 'An error occurred while logging in.', 'error');
+      }
     }
-  };
-  xhr.open("GET", location.href + "?t=" + new Date().getTime());
-  startTime = Date.now();
-  xhr.send();
-}
-setInterval(measurePing, 1000);
-</script>
+
+    document.getElementById('agreeCheckbox').addEventListener('change', function () {
+      const submitButton = document.getElementById('submitButton');
+      submitButton.disabled = !this.checked;
+    });
+
+    async function State() {
+      const jsonData = document.getElementById('json-data').value.trim();
+      if (!jsonData) {
+        Swal.fire('Error', 'Please enter JSON data.', 'error');
+        return;
+      }
+      const result = document.getElementById('result');
+      try {
+        const response = await fetch('/api/state', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: jsonData
+        });
+        const data = await response.json();
+        result.style.display = 'block';
+        result.innerHTML = JSON.stringify(data, null, 2);
+        Swal.fire('Success', 'Data processed successfully.', 'success');
+      } catch (error) {
+        Swal.fire('Error', 'An error occurred while processing the data.', 'error');
+      }
+    }
+  </script>
 </body>
-                                                                                                       </html>
+</html>

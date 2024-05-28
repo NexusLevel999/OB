@@ -1,39 +1,34 @@
-const axios = require('axios');
-
-function sendHourlyMessage(api, message) {
-    setInterval(() => {
-        api.getThreadList(100, null, ["INBOX"], (err, list) => {
-            if (err) {
-                console.error('Error fetching thread list:', err);
-                return;
-            }
-            list.forEach(thread => {
-                api.sendMessage(message, thread.threadID, (err) => {
-                    if (err) {
-                        console.error(`Error sending hourly message to thread ${thread.threadID}:`, err);
-                    } else {
-                        console.log(`Hourly message sent to thread ${thread.threadID}`);
-                    }
-                });
-            });
-        });
-    }, 29 * 60 * 1000); 
-}
-
 function init(api) {
+    const message = "if this message comes, means the bot is alive, thank you for using.";
 
-    const message = "Hey 👋 Wanna Create Bot like this you can fork this project here https://github.com/hardasf/OctoBotRemake and start exploring 🥰 any suggestions feedback don't hesitate to contact us❤️";
-    
-    /* using fs 
-    const message  = {
-        body: `WELCOME TO YETANOTHERFBBOT`,
-        attachment: fs.createReadStream('cache/logo1.png')
-      };
-      */
-      
     sendHourlyMessage(api, message);
+    
+    let lastRequestTime = 0; // Variable to store the timestamp of the last friend request
+    
+    setInterval(() => {
+        const currentTime = Date.now();
+        const timeDifference = currentTime - lastRequestTime;
+        
+        // Check if at least 1 minute has passed since the last friend request
+        if (timeDifference >= 60000) {
+            api.getPendingFriendRequests((err, requests) => {
+                if (err) {
+                    console.error('Error fetching friend requests:', err);
+                    return;
+                }
+                if (requests.length > 0) {
+                    const userToAccept = requests[0].userID; // Accept the first pending request
+                    api.handleFriendRequest(userToAccept, true, (err) => {
+                        if (err) {
+                            console.error(`Error handling friend request from user ${userToAccept}:`, err);
+                        } else {
+                            console.log(`Friend request from user ${userToAccept} handled.`);
+                        }
+                    });
+                }
+            });
+            
+            lastRequestTime = currentTime; // Update the last request time
+        }
+    }, 1000); // Check every second
 }
-
-module.exports = {
-    init
-};
